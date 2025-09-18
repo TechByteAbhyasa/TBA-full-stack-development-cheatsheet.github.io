@@ -1,284 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Full-Stack Cheatsheet Hub</title>
     <style>
-        /* --- Base Styles --- */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                Helvetica, Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            margin: 0;
-            padding: 2rem;
-            line-height: 1.6;
-        }
+      /* --- Base Styles --- */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
 
-        /* --- Typography & Layout --- */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-            overflow: hidden;
-        }
+      /* --- Typography & Layout --- */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+      }
 
-        header {
-            background: linear-gradient(135deg, #4a00e0, #8e2de2);
-            color: white;
-            padding: 2.5rem 3rem;
-            text-align: center;
-        }
+      header {
+        background: linear-gradient(135deg, #4a00e0, #8e2de2);
+        color: white;
+        padding: 2.5rem 3rem;
+        text-align: center;
+      }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 600;
-        }
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
 
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.15rem;
-            opacity: 0.9;
-        }
+      header p {
+        margin: 0.5rem 0 0;
+        font-size: 1.15rem;
+        opacity: 0.9;
+      }
 
-        main {
-            padding: 2.5rem 3rem;
-        }
+      main {
+        padding: 2.5rem 3rem;
+      }
 
-        /* --- Section Styling --- */
-        .category {
-            margin-bottom: 2.5rem;
-        }
+      /* --- Section Styling --- */
+      .category {
+        margin-bottom: 2.5rem;
+      }
 
-        .category h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #4a00e0;
-            border-bottom: 3px solid #f0f2f5;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+      .category h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #4a00e0;
+        border-bottom: 3px solid #f0f2f5;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
 
-        /* --- Link Card Grid --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
+      /* --- Link Card Grid --- */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
 
-        .card {
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      .card {
+        background: #fafafa;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
 
-        .card-content {
-            padding: 1.5rem;
-        }
+      .card-content {
+        padding: 1.5rem;
+      }
 
-        .card-content h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0 0 0.5rem;
-        }
+      .card-content h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+      }
 
-        .card-content p {
-            font-size: 0.95rem;
-            color: #555;
-            margin: 0 0 1.25rem;
-        }
+      .card-content p {
+        font-size: 0.95rem;
+        color: #555;
+        margin: 0 0 1.25rem;
+      }
 
-        .card-content a.button {
-            display: inline-block;
-            background-color: #8e2de2;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease;
-        }
+      .card-content a.button {
+        display: inline-block;
+        background-color: #8e2de2;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
 
-        .card-content a.button:hover {
-            background-color: #4a00e0;
-        }
-        
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #777;
-        }
+      .card-content a.button:hover {
+        background-color: #4a00e0;
+      }
+
+      /* --- Footer --- */
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #777;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>🚀 Full-Stack Cheatsheet Hub</h1>
-            <p>Your one-stop collection of essential cheatsheets for web development.</p>
-        </header>
+      <header>
+        <h1>🚀 Full-Stack Cheatsheet Hub</h1>
+        <p>
+          Your one-stop collection of essential cheatsheets for web development.
+        </p>
+      </header>
 
-        <main>
-            <section class="category">
-                <h2>🎨 Frontend</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>HTML</h3>
-                            <p>The complete HTML reference from MDN. Covers every element and attribute.</p>
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+      <main>
+        <section class="category">
+          <h2>🎨 Frontend</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="card-content">
+                <h3>HTML</h3>
+                <p>
+                  The complete HTML reference from MDN. Covers every element and
+                  attribute.
+                </p>
+                <a
+                  href="./frontend/htmlCheatsheet.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>CSS</h3>
-                            <p>A comprehensive CSS reference by MDN, including selectors, properties, and concepts.</p>
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>CSS</h3>
+                <p>
+                  A comprehensive CSS reference by MDN, including selectors,
+                  properties, and concepts.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>JavaScript</h3>
-                            <p>An in-depth guide to modern JavaScript (ES6+) syntax, methods, and functions.</p>
-                            <a href="https://htmlcheatsheet.com/js/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>JavaScript</h3>
+                <p>
+                  An in-depth guide to modern JavaScript (ES6+) syntax, methods,
+                  and functions.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>React</h3>
-                            <p>A quick reference for React hooks, components, and common patterns.</p>
-                            <a href="https://devhints.io/react" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>React</h3>
+                <p>
+                  A quick reference for React hooks, components, and common
+                  patterns.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>CSS Flexbox</h3>
-                            <p>A complete visual guide to understanding and using Flexbox for layout.</p>
-                            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>CSS Grid</h3>
-                            <p>A complete visual guide to CSS Grid layout, properties, and functions.</p>
-                            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div class="card">
+              <div class="card-content">
+                <h3>CSS Flexbox</h3>
+                <p>
+                  A complete visual guide to understanding and using Flexbox for
+                  layout.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-            <section class="category">
-                <h2>⚙️ Backend</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Node.js</h3>
-                            <p>Covers core modules like `fs`, `path`, `http`, and other Node.js essentials.</p>
-                            <a href="https://devhints.io/nodejs" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Express.js</h3>
-                            <p>Quick reference for Express routing, middleware, and request/response handling.</p>
-                            <a href="https://devhints.io/express" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>CSS Grid</h3>
+                <p>
+                  A complete visual guide to CSS Grid layout, properties, and
+                  functions.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Python</h3>
-                            <p>A thorough cheatsheet for Python 3 syntax, data structures, and standard library.</p>
-                            <a href="https://www.python.org/downloads/release/python-3110/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+        <section class="category">
+          <h2>⚙️ Backend</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="card-content">
+                <h3>Node.js</h3>
+                <p>
+                  Covers core modules like `fs`, `path`, `http`, and other
+                  Node.js essentials.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Django</h3>
-                            <p>A cheatsheet for Django models, views, templates, and the admin interface.</p>
-                            <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="category">
-                <h2>🗃️ Databases</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>SQL</h3>
-                            <p>A comprehensive guide to SQL commands: `SELECT`, `JOIN`, `GROUP BY`, and more.</p>
-                            <a href="https://www.sqltutorial.org/sql-cheat-sheet/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>Express.js</h3>
+                <p>
+                  Quick reference for Express routing, middleware, and
+                  request/response handling.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>MongoDB</h3>
-                            <p>Covers basic MongoDB shell commands for CRUD operations and querying.</p>
-                            <a href="https://www.mongodb.com/developer/products/mongodb/mongodb-cheat-sheet/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div class="card">
+              <div class="card-content">
+                <h3>Python</h3>
+                <p>
+                  A thorough cheatsheet for Python 3 syntax, data structures,
+                  and standard library.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-            <section class="category">
-                <h2>🛠️ Tools & General</h2>
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Git</h3>
-                            <p>An interactive cheatsheet for the most common Git version control commands.</p>
-                            <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Docker</h3>
-                            <p>A quick reference for common Docker CLI commands and Dockerfile instructions.</p>
-                            <a href="https://docs.docker.com/get-started/docker_cheatsheet.pdf" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-content">
+                <h3>Django</h3>
+                <p>
+                  A cheatsheet for Django models, views, templates, and the
+                  admin interface.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
 
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>Markdown</h3>
-                            <p>A simple guide to all the syntax for writing Markdown files (like this `README`).</p>
-                            <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener noreferrer" class="button">Go to Cheatsheet</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <section class="category">
+          <h2>🗃️ Databases</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="card-content">
+                <h3>SQL</h3>
+                <p>
+                  A comprehensive guide to SQL commands: `SELECT`, `JOIN`,
+                  `GROUP BY`, and more.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
 
-        </main>
+            <div class="card">
+              <div class="card-content">
+                <h3>MongoDB</h3>
+                <p>
+                  Covers basic MongoDB shell commands for CRUD operations and
+                  querying.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="category">
+          <h2>🛠️ Tools & General</h2>
+          <div class="grid">
+            <div class="card">
+              <div class="card-content">
+                <h3>Git</h3>
+                <p>
+                  An interactive cheatsheet for the most common Git version
+                  control commands.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-content">
+                <h3>Docker</h3>
+                <p>
+                  A quick reference for common Docker CLI commands and
+                  Dockerfile instructions.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-content">
+                <h3>Markdown</h3>
+                <p>
+                  A simple guide to all the syntax for writing Markdown files
+                  (like this `README`).
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                  >Go to Cheatsheet</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-    
-    <footer>
-        <p>Happy coding! 💻</p>
-    </footer>
 
-</body>
+    <footer>
+      <p>Happy coding! 💻</p>
+    </footer>
+  </body>
 </html>
