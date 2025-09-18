@@ -1,1 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Element Categorization</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        border-bottom: 2px solid #bdc3c7;
+        padding-bottom: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        background-color: #ffffff;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #f2f2f2;
+        color: #34495e;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #fcfcfc;
+      }
+      pre {
+        background-color: #2d2d2d;
+        color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.9em;
+      }
+      code {
+        font-family: "Courier New", Courier, monospace;
+      }
 
+      /* Specific styles for output examples */
+      .output-example-form input[type="text"],
+      .output-example-form select,
+      .output-example-form button {
+        display: block;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 1em;
+      }
+      .output-example-table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 10px 0;
+      }
+      .output-example-table th,
+      .output-example-table td {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: left;
+        vertical-align: middle;
+      }
+      .output-example-table caption {
+        caption-side: bottom;
+        font-size: 0.9em;
+        font-style: italic;
+      }
+      .output-example-details {
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 5px;
+        background: #fafafa;
+      }
+      .output-example-details summary {
+        cursor: pointer;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Cheatsheet</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Topic and Explanation</th>
+          <th>Example Code</th>
+          <th>Example Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>1. Document Metadata</strong>
+            <p>
+              These elements provide information <em>about</em> the document
+              itself, such as its title, settings, and links to external
+              resources (like CSS or scripts). They are placed inside the
+              <code>&lt;head&gt;</code> element.
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;head&gt;</code>,
+              <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code>,
+              <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>,
+              <code>&lt;style&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;!-- This code goes in the &lt;head&gt; --&gt;
+
+&lt;title&gt;My Page Title&lt;/title&gt;
+
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" 
+      content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+          </td>
+          <td>
+            <p><em>(Output is not visible on the page itself.)</em></p>
+            <p>This code would:</p>
+            <ul>
+              <li>Set the browser tab's title to "My Page Title".</li>
+              <li>
+                Ensure characters (like emoji) display correctly with UTF-8.
+              </li>
+              <li>Optimize the page for mobile devices.</li>
+              <li>Load an external CSS file to style the page.</li>
+              <li>Load an external JavaScript file to add interactivity.</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>2. Sectioning and Structural Content</strong>
+            <p>
+              These elements organize the document into logical, semantic
+              sections. They define the page's layout, such as the header, main
+              content area, navigation, and footer.
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;body&gt;</code>,
+              <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+              <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>,
+              <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>,
+              <code>&lt;footer&gt;</code>, <code>&lt;div&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;header&gt;
+  &lt;h1&gt;My Website&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="/"&gt;Home&lt;/a&gt; | &lt;a href="/about"&gt;About&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+    &lt;p&gt;This is the main content...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&copy; 2025 My Website&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+          </td>
+          <td>
+            <header style="border-bottom: 1px solid #ccc; padding-bottom: 5px">
+              <h1 style="margin: 0 0 5px 0; font-size: 1.5em">My Website</h1>
+              <nav><a href="#!">Home</a> | <a href="#!">About</a></nav>
+            </header>
+
+            <main style="padding: 10px 0">
+              <article>
+                <h2 style="margin: 10px 0 5px 0; font-size: 1.2em">
+                  Blog Post Title
+                </h2>
+                <p style="margin: 0">This is the main content...</p>
+              </article>
+            </main>
+
+            <footer
+              style="
+                border-top: 1px solid #ccc;
+                padding-top: 5px;
+                font-size: 0.9em;
+                color: #555;
+              "
+            >
+              <p style="margin: 0">© 2025 My Website</p>
+            </footer>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>3. Text Content and Semantics</strong>
+            <p>
+              These elements structure and add meaning to text. This includes
+              paragraphs, lists, links, and inline elements that emphasize text
+              (like <code>&lt;strong&gt;</code>) or define it (like
+              <code>&lt;abbr&gt;</code>).
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;p&gt;</code>,
+              <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>,
+              <code>&lt;em&gt;</code>, <code>&lt;ul&gt;</code>,
+              <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>,
+              <code>&lt;blockquote&gt;</code>, <code>&lt;code&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;p&gt;This is a paragraph with 
+  &lt;strong&gt;important&lt;/strong&gt; text and 
+  &lt;em&gt;emphasized&lt;/em&gt; text.
+&lt;/p&gt;
+
+&lt;p&gt;Read more at &lt;a href="https://google.com"&gt;Google&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </td>
+          <td>
+            <p>
+              This is a paragraph with <strong>important</strong> text and
+              <em>emphasized</em> text.
+            </p>
+
+            <p>Read more at <a href="#!">Google</a>.</p>
+
+            <ul>
+              <li>First item</li>
+              <li>Second item</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>4. Forms and Input</strong>
+            <p>
+              These elements are used to create interactive forms for collecting
+              user input. This includes text fields, buttons, dropdowns,
+              checkboxes, and more.
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;form&gt;</code>,
+              <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>,
+              <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code>,
+              <code>&lt;option&gt;</code>, <code>&lt;textarea&gt;</code>,
+              <code>&lt;fieldset&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;form action="/submit"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="user_name"&gt;
+
+  &lt;label for="job"&gt;Job:&lt;/label&gt;
+  &lt;select id="job" name="user_job"&gt;
+    &lt;option value="dev"&gt;Developer&lt;/option&gt;
+    &lt;option value="des"&gt;Designer&lt;/option&gt;
+  &lt;/select&gt;
+  
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </td>
+          <td>
+            <form class="output-example-form" onsubmit="return false;">
+              <label for="name-example">Name:</label>
+              <input type="text" id="name-example" name="user_name" />
+
+              <label for="job-example">Job:</label>
+              <select id="job-example" name="user_job">
+                <option value="dev">Developer</option>
+                <option value="des">Designer</option>
+              </select>
+
+              <button type="submit">Submit</button>
+            </form>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>5. Media and Embedding Elements</strong>
+            <p>
+              This category includes elements for embedding various types of
+              media, such as images, audio, video, or even other web pages
+              (using <code>&lt;iframe&gt;</code>).
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;img&gt;</code>,
+              <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>,
+              <code>&lt;iframe&gt;</code>, <code>&lt;picture&gt;</code>,
+              <code>&lt;source&gt;</code>, <code>&lt;canvas&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;!-- Image with alternative text --&gt;
+&lt;img 
+  src="https://via.placeholder.com/150" 
+  alt="A 150x150 placeholder image"
+  width="150"
+  height="150"
+&gt;
+
+&lt;!-- Basic video embed --&gt;
+&lt;video controls width="250"&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+          </td>
+          <td>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="A 150x150 placeholder image"
+              width="150"
+              height="150"
+            />
+
+            <div
+              style="
+                width: 250px;
+                background: #333;
+                color: white;
+                text-align: center;
+                padding: 40px 10px;
+                box-sizing: border-box;
+                margin-top: 10px;
+                border-radius: 5px;
+              "
+            >
+              (Video player example)
+              <br />
+              <small>Your browser does not support the video tag.</small>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>6. Table Content</strong>
+            <p>
+              These elements are specifically designed for creating and
+              structuring tabular data (data organized in rows and columns).
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;table&gt;</code>,
+              <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+              <code>&lt;tfoot&gt;</code>, <code>&lt;tr&gt;</code>,
+              <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>,
+              <code>&lt;caption&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;table&gt;
+  &lt;caption&gt;Monthly Sales&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Month&lt;/th&gt;
+      &lt;th&gt;Sales&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;January&lt;/td&gt;
+      &lt;td&gt;$1,000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          </td>
+          <td>
+            <table class="output-example-table">
+              <caption>
+                Monthly Sales
+              </caption>
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Sales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>January</td>
+                  <td>$1,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>7. Interactive and Web Components Elements</strong>
+            <p>
+              These elements create user-interactive widgets or are part of the
+              Web Components specification for creating reusable custom
+              elements.
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;details&gt;</code>,
+              <code>&lt;summary&gt;</code>, <code>&lt;dialog&gt;</code>,
+              <code>&lt;slot&gt;</code>, <code>&lt;template&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;details&gt;
+  &lt;summary&gt;Click to see details&lt;/summary&gt;
+  &lt;p&gt;Here is more information that was
+  initially hidden.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+          </td>
+          <td>
+            <details class="output-example-details">
+              <summary>Click to see details</summary>
+              <p>Here is more information that was initially hidden.</p>
+            </details>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>8. Deprecated Elements</strong>
+            <p>
+              These elements are obsolete and no longer recommended. They have
+              been replaced by newer HTML elements or, more commonly, by CSS for
+              styling.
+            </p>
+            <p>
+              <strong>Key Elements:</strong> <code>&lt;font&gt;</code>,
+              <code>&lt;center&gt;</code>, <code>&lt;marquee&gt;</code>,
+              <code>&lt;strike&gt;</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;!-- This is BAD PRACTICE. Use CSS instead. --&gt;
+&lt;center&gt;
+  &lt;font color="red" size="5"&gt;
+    This text is centered and red.
+  &lt;/font&gt;
+&lt;/center&gt;</code></pre>
+          </td>
+          <td>
+            <center>
+              <font color="red" size="5"> This text is centered and red. </font>
+            </center>
+            <p style="text-align: center; margin-top: 10px">
+              <small
+                ><strong
+                  >(Note: Using <code>&lt;font&gt;</code> and
+                  <code>&lt;center&gt;</code> is deprecated. Use CSS
+                  instead.)</strong
+                ></small
+              >
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>9. Global Attributes</strong>
+            <p>
+              These attributes can be used on <em>any</em> HTML element. They
+              provide core functionality like styling, identification,
+              accessibility, and interactivity.
+            </p>
+            <p>
+              <strong>Key Attributes:</strong> <code>id</code>,
+              <code>class</code>, <code>style</code>, <code>title</code>,
+              <code>hidden</code>, <code>lang</code>, <code>tabindex</code>
+            </p>
+          </td>
+          <td>
+            <pre><code>&lt;p 
+  id="intro-paragraph"
+  class="highlight"
+  style="color: blue; font-weight: bold;"
+  title="This is a tooltip"
+&gt;
+  This paragraph has global attributes.
+&lt;/p&gt;
+
+&lt;p hidden&gt;This paragraph is hidden.&lt;/p&gt;</code></pre>
+          </td>
+          <td>
+            <p
+              id="intro-paragraph"
+              class="highlight"
+              style="color: blue; font-weight: bold; margin: 0"
+              title="This is a tooltip"
+            >
+              This paragraph has global attributes. (Hover over me to see the
+              'title' attribute!)
+            </p>
+
+            <p style="margin: 5px 0 0 0">
+              <small
+                >(A second paragraph with <code>hidden</code> would not be
+                visible at all.)</small
+              >
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
